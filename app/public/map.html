@@ -5,40 +5,34 @@
     <title>Place Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Cabin:600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-          height: 50%;
-          width: 50%;
+          height: 500px;
+          width: 600px;
         }
         /* Optional: Makes the sample page fill the window. */
-        html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
         #description {
           font-family: Roboto;
           font-size: 15px;
           font-weight: 300;
         }
-  
+
         #infowindow-content .title {
           font-weight: bold;
         }
-  
+
         #infowindow-content {
           display: none;
         }
-  
+
         #map #infowindow-content {
           display: inline;
         }
-  
+
         .pac-card {
           margin: 10px 10px 0 0;
           border-radius: 2px 0 0 2px;
@@ -49,23 +43,23 @@
           background-color: #fff;
           font-family: Roboto;
         }
-  
+
         #pac-container {
           padding-bottom: 12px;
           margin-right: 12px;
         }
-  
+
         .pac-controls {
           display: inline-block;
           padding: 5px 11px;
         }
-  
+
         .pac-controls label {
           font-family: Roboto;
           font-size: 13px;
           font-weight: 300;
         }
-  
+
         #pac-input {
           background-color: #fff;
           font-family: Roboto;
@@ -76,11 +70,11 @@
           text-overflow: ellipsis;
           width: 400px;
         }
-  
+
         #pac-input:focus {
           border-color: #4d90fe;
         }
-  
+
         #title {
           color: #fff;
           background-color: #4d90fe;
@@ -95,17 +89,20 @@
   </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
       <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">Pet App</a>
+        <a class="navbar-brand" href="index.html">Pet App</a>
       </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.html">Home</a></li>
         <li><a href="profile.html">Pet Profile</a></li>
+        <li><a href="registration.html">Pet Registration</a></li>
+        <li><a href="map.html">Find a Park</a></li>
       </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
 
 <input id="pac-input" class="controls" type="text" placeholder="Search Box">
 
@@ -123,12 +120,12 @@
         zoom: 16,
         mapTypeId: 'roadmap'
       });
-  
+
       // Create the search box and link it to the UI element.
       var input = document.getElementById('pac-input');
       var searchBox = new google.maps.places.SearchBox(input);
       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  
+
       // Bias the SearchBox results towards current map's viewport.
       map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
@@ -139,7 +136,7 @@
       // more details for that place.
       searchBox.addListener('places_changed', function() {
         var places = searchBox.getPlaces();
-  
+
           if (places.length == 0) {
             return;
           }
@@ -183,7 +180,7 @@
         map.fitBounds(bounds);
       });
     }
-  
+
   </script>
 </body>
 
@@ -191,4 +188,3 @@
 </script>
 
 </html>
-
