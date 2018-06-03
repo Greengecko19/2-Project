@@ -1,36 +1,19 @@
 <!doctype html>
 <html lang="en-US">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html">
   <title>Pet App - Profile</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script
-  src="https://code.jquery.com/jquery-1.10.2.min.js"
-  integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg="
-  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https:/maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https:/code.jquery.com/jquery-1.10.2.min.js" integrity="sha256-C6CB9UYIS9UJeqinPHWTHVqh/E1uhG5Twh+Y5qFQmYg=" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Pet App</a>
-      </div>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="profile.html">Pet Profile</a></li>
-        <li><a href="registration.html">Pet Registration</a></li>
-        <li><a href="map.html">Find a Park</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <div id="w">
     <div id="content" class="clearfix">
-      <div id="userphoto"><img src="images/avatar.png" alt="default avatar"></div>
+      <div id="userphoto"><img src="/images/avatar.png" alt="default avatar"></div>
       <h1>Pet Profile Layout</h1>
 
       <nav id="profiletabs">
@@ -74,46 +57,51 @@
         <p>Friends list:</p>
 
         <ul id="friendslist" class="clearfix">
-          <li><a href="#"><img src="images/avatar.png" width="22" height="22"> Username</a></li>
+          <li><a href="#"><img src="/images/avatar.png" width="22" height="22"> Username</a></li>
           <br>
-          <li><a href="#"><img src="images/avatar.png" width="22" height="22"> SomeCat123</a></li>
+          <li><a href="#"><img src="/images/avatar.png" width="22" height="22"> SomeCat123</a></li>
           <br>
-          <li><a href="#"><img src="images/avatar.png" width="22" height="22"> PurpleGiraffe</a></li>
+          <li><a href="#"><img src="/images/avatar.png" width="22" height="22"> PurpleGiraffe</a></li>
         </ul>
       </section>
 
       <section id="settings" class="hidden">
         <p>Edit your user settings:</p>
 
-        <p class="setting"><span>E-mail Address <img src="images/edit.png" alt="*Edit*"></span>email@email.com</p>
+        <p class="setting"><span>E-mail Address <img src="/images/edit.png" alt="*Edit*"></span>email@email.com</p>
 
-        <p class="setting"><span>Language <img src="images/edit.png" alt="*Edit*"></span> English(US)</p>
+        <p class="setting"><span>Language <img src="/images/edit.png" alt="*Edit*"></span> English(US)</p>
 
-        <p class="setting"><span>Profile Status <img src="images/edit.png" alt="*Edit*"></span> Public</p>
+        <p class="setting"><span>Profile Status <img src="/images/edit.png" alt="*Edit*"></span> Public</p>
 
-        <p class="setting"><span>Update Frequency <img src="images/edit.png" alt="*Edit*"></span> Weekly</p>
+        <p class="setting"><span>Update Frequency <img src="/images/edit.png" alt="*Edit*"></span> Weekly</p>
 
-        <p class="setting"><span>Connected Accounts <img src="images/edit.png" alt="*Edit*"></span> None</p>
+        <p class="setting"><span>Connected Accounts <img src="/images/edit.png" alt="*Edit*"></span> None</p>
       </section>
-    </div><!-- @end #content -->
-  </div><!-- @end #w -->
+    </div>
+    <!-- @end #content -->
+  </div>
+  <!-- @end #w -->
 
-<script type="text/javascript">
-$(function(){
-  $('#profiletabs ul li a').on('click', function(e){
-    e.preventDefault();
-    var newcontent = $(this).attr('href');
+  <script type="text/javascript">
+    $(function() {
+      $('#profiletabs ul li a').on('click', function(e) {
+        e.preventDefault();
+        var newcontent = $(this).attr('href');
 
-    $('#profiletabs ul li a').removeClass('sel');
-    $(this).addClass('sel');
+        $('#profiletabs ul li a').removeClass('sel');
+        $(this).addClass('sel');
 
-    $('#content section').each(function(){
-      if(!$(this).hasClass('hidden')) { $(this).addClass('hidden'); }
+        $('#content section').each(function() {
+          if (!$(this).hasClass('hidden')) {
+            $(this).addClass('hidden');
+          }
+        });
+
+        $(newcontent).removeClass('hidden');
+      });
     });
-
-    $(newcontent).removeClass('hidden');
-  });
-});
-</script>
+  </script>
 </body>
+
 </html>

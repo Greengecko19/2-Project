@@ -70,7 +70,7 @@ a:last-child {
 
 body {
   background-color: white;
-  background: url(../images/dog_bg.jpg) no-repeat;
+  background: url(/images/dog_bg.jpg) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
