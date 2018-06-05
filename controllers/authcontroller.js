@@ -11,7 +11,7 @@ exports.signin = function(req, res) {
 };
 
 exports.userloggedin = function(req, res) {
-  res.render('dashboard.handlebars');
+  res.render('profile.handlebars');
 };
 
 exports.logout = function(req, res) {
