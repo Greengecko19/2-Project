@@ -262,7 +262,7 @@ section {
 
 .col-md-4 {
   padding: 10px;
-  margin-left: 62px;
+  /* margin-left: 62px; */
 }
 
 /* .footer {
@@ -340,6 +340,17 @@ input[type=submit]:hover {
   margin: 19px;
 }
 
+.back-home-login {
+  margin-left: 32px;
+}
+
+.back-home-register {
+  /* margin-left: 40px; */
+  /* display: inline-block; */
+  margin-left: 50px;
+  max-width: 10%;
+}
+
 .registration-container {
     border-radius: 5px;
     /* background-color: white; */
@@ -379,6 +390,15 @@ input[type=submit]:hover {
   padding: 20px;
   margin: 0;
 }
+
+.tos {
+  display:inline-block;
+}
+
+.back-home-tos {
+  margin: 300px 0 0 -370px
+}
+
 
 /* Create two columns that float next to eachother */
 .column {
