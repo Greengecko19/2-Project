@@ -20,4 +20,8 @@ module.exports = function(app) {
   app.get("/signup-pet", function(req, res) {
     res.render("signup-pet.handlebars");
   });
+
+  app.get("/terms", function(req, res) {
+    res.render("terms.handlebars");
+  });
 };
