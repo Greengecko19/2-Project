@@ -34,4 +34,7 @@
         </div>
         <button class="btn btn-signup btn-primary" type="submit">Submit Registration</button>
     </form>
+    {{#if signUpMessage}}
+    <div class="alert alert-danger">{{signUpMessage}}</div>
+  {{/if}}
 </div>

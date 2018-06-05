@@ -16,7 +16,9 @@ module.exports = function(app, passport) {
     successRedirect: '/profile',
     failureRedirect: '/signin'
   }), (req, res) => {
-    console.log('callback', req, res)
+    res.render('/signup', {
+      message: req.flash('signInMessage'),
+    });
   });
 
   app.get('/profile', isLoggedIn, authController.userloggedin);
@@ -26,7 +28,12 @@ module.exports = function(app, passport) {
   app.post('/signin', passport.authenticate('local-signin', {
     successRedirect: '/profile',
     failureRedirect: '/signin',
-  }));
+    failureFlash: true
+  }), (req, res) => {
+    res.render('/signup', {
+      message: req.flash('signInMessage'),
+    });
+  });
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
