@@ -6,7 +6,7 @@ module.exports = function (app, passport) {
 
     app.get('/', (req, res, next) => {
         res.render(path.join(__dirname, '../views'));
-        // res.send('Welcome to Nutrition App');
+        // res.send('Welcome to Petbook App');
     });
 
     app.get('/signup', authController.signup);
@@ -36,5 +36,3 @@ module.exports = function (app, passport) {
         res.redirect('/signin');
     }
 };
-
-

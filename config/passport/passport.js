@@ -12,7 +12,7 @@ module.exports = function (passport, user) {
         done(null, user.id);
     });
 
-    //Deserialize Session user 
+    //Deserialize Session user
     passport.deserializeUser(function (id, done) {
         console.log('Deserialize user called.');
         User.findById(id).then(function (user) {
@@ -46,7 +46,7 @@ module.exports = function (passport, user) {
                 if(err) return done(err);
                 if(user) {
                     return done(null, false, {
-                        message: 'That email is already taken by others'
+                        message: 'That email is already taken!'
                     });
                 } else {
                     const userPassword = generateHash(password);
@@ -74,7 +74,7 @@ module.exports = function (passport, user) {
         }
     ));
 
-    
+
 
     passport.use('local-signin', new LocalStrategy(
         {
@@ -119,5 +119,3 @@ module.exports = function (passport, user) {
     ));
 
 };
-
-

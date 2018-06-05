@@ -16,4 +16,8 @@ module.exports = function(app) {
   app.get("/map", function(req, res) {
     res.render('map.handlebars');
   });
+
+  app.get("/signup-pet", function(req, res) {
+    res.render("signup-pet.handlebars");
+  });
 };
