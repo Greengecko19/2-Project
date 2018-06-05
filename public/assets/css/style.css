@@ -195,6 +195,10 @@ section {
   /* background-color: White; */
   /* height: 175px; */
   /* margin: auto; */
+  color: #162b3d;
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  padding: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -223,7 +227,7 @@ section {
   margin: 0 auto;
 }
 
-.connect {
+.login-text {
   color: #162b3d;
   font-family: 'Cabin', sans-serif;
   font-size: 20px;
@@ -316,7 +320,7 @@ input[type=submit]:hover {
 /*Style the container/contact section */
 .container {
     border-radius: 5px;
-    background-color: white;
+    /* background-color: white; */
     /* padding: 10px; */
     /* max-width: 650px; */
     /* padding-right: 15px; */
@@ -327,16 +331,52 @@ input[type=submit]:hover {
 
 .login-container {
   border-radius: 5px;
-  background-color: white;
+  /* background-color: white; */
   max-width: 650px;
+}
+
+.btn-login {
+  margin: 19px;
 }
 
 .registration-container {
     border-radius: 5px;
-    background-color: white;
+    /* background-color: white; */
     max-width: 850px;
     /* display: flex;
     justify-content: center; */
+}
+
+.dashboard-container {
+  max-width: 650px;
+}
+
+.col-md-6 {
+  width: 25%;
+}
+
+#signup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-signup {
+  width: 15%;
+  margin-left: 15px;
+}
+
+.form-check {
+  margin-left: -5px;
+}
+
+.reg-message {
+
+}
+
+.form-group {
+  padding: 20px;
+  margin: 0;
 }
 
 /* Create two columns that float next to eachother */
