@@ -36,4 +36,7 @@
         <a href="/" class="btn back-home-register btn-login btn-primary" role="button">Back Home</a>
       </div>
     </form>
+    {{#if signUpMessage}}
+    <div class="alert alert-danger">{{signUpMessage}}</div>
+  {{/if}}
 </div>
