@@ -39,9 +39,10 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 require('./routes/auth-api-routes.js')(app, passport);
 require('./config/passport/passport.js')(passport, db.User);
 require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 db.sequelize.sync({
-  force: false
+  force: true
 }).then(function() {
   app.listen(PORT, function(err) {
     if (!err) {
