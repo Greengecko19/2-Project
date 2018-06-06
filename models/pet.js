@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-  const pets = sequelize.define('pets', {
+  const Pets = sequelize.define('Pets', {
 
     pets_name: {
       type: DataTypes.STRING(25),
@@ -15,18 +15,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(25),
       allowNull: false,
     },
-    pets_temerament: {
+    pets_temperament: {
       type: DataTypes.STRING(25),
       allowNull: false,
     }
 
   });
 
-  pets.associate = function(models) {
-    pets.belongsTo(models.User)
+  Pets.associate = function(models) {
+    Pets.belongsTo(models.User)
   };
   console.log('pets model has been called');
 
-  return pets;
+  return Pets;
 
 }
