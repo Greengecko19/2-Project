@@ -27,10 +27,27 @@
   display: inline-block; */
 }
 
+.pb-logo {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: -25px;
+}
+
 .nav-links a {
   padding-right: 10px;
   border-right: 1px solid lightgray;
   /* max-height: 3px; */
+}
+
+.logo {
+  /* background-image: url(/images/pb_logo.png); */
+  width: 5px;
+  height: 5px;
+  /* display:inline-block;
+  vertical-align:middle; */
 }
 
 a:last-child {
@@ -160,6 +177,9 @@ body {
 
 .bio-description {
   font-family: 'Cabin', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 section {
@@ -371,6 +391,11 @@ input[type=submit]:hover {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.btn {
+  background-color: #222;
+  border-color: #2e6da4;
 }
 
 .btn-signup {
@@ -652,9 +677,9 @@ a:hover { text-decoration: underline; }
   float: left;
   padding: 8px 11px;
   font-size: 1.2em;
-  font-weight: bold;
+  /* font-weight: bold; */
   background: #222;
-  color: #969c9c;
+  color: #fff;
   margin-right: 7px;
   border: 1px solid #fff;
   -webkit-border-radius: 5px;
@@ -666,13 +691,13 @@ a:hover { text-decoration: underline; }
 }
 #profiletabs ul li a:hover {
   text-decoration: none;
-  background: lightgray;
-  color: #565656;
+  background: #23527c;
+  color: #fff;
 }
 
 #profiletabs ul li a.sel {
-  background: #fff;
-  border-color: #222;
+  /* background: #fff; */
+  border-color: #2e6da4;
 }
 
 
