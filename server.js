@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 
 //Passport, express session and passport session
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'dog',
   resave: true,
   saveUninitialized: true
 })); // session secret

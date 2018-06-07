@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   User.associate = function(models) {
-    User.hasMany(models.Pets)
+    User.hasOne(models.Pets)
   };
 
   console.log('User Model has been called')

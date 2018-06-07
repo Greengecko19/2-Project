@@ -28,13 +28,35 @@
 
         <div class="form-group">
             <div class="form-check">
-                <!-- <input class="form-check-input" type="checkbox" id="invalidCheck2"> -->
-                <!-- <label class="form-check-label" for="invalidCheck2"> -->
-                  <!-- <a href="/terms" class="terms">Agree to terms and conditions</a> -->
-                <!-- </label> -->
+              <label id="UserId">{{id}}</label>
             </div>
         </div>
         <button class="btn btn-signup-pet btn-primary" type="submit">Submit Registration</button>
     </form>
   </div>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('#submitBtn').on('click', (event) => {
+      event.preventDefault();
+      const newPet = {
+        pets_name: $('#pet-name').val().trim(),
+        pets_breed: $('#pet-breed').val().trim(),
+        pets_age: $('#pet-age').val().trim(),
+        pets_temperament: $('#pet-temperament').val().trim(),
+        UserId: {{id}},
+      };
+      if (Object.values(newPet).includes('')) return;
+      $.ajax('/api/signup-pet', {
+        type: 'POST',
+        data: newPet,
+        success: (res) => {
+          window.location.href = '/profile';
+        }
+      });
+      // .get('/profile', (req, res) => {
+      //   res.render('profile.handlebar');
+      // });
+    });
+  });
+</script>

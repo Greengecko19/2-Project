@@ -13,7 +13,7 @@ module.exports = function(app, passport) {
   app.get('/signin', authController.signin);
 
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/profile',
+    successRedirect: '/signup-pet',
     failureRedirect: '/signin'
   }), (req, res) => {
     res.render('/signup', {
@@ -22,6 +22,9 @@ module.exports = function(app, passport) {
   });
 
   app.get('/profile', isLoggedIn, authController.userloggedin);
+
+  // app.get('/signup-pet', isLoggedIn, authController.petsignup);
+
 
   app.get('/logout', authController.logout);
 
