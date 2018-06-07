@@ -46,8 +46,22 @@ module.exports = function(app) {
     });
   });
 
-
-
+  app.get("/profile", function(req, res) {
+    db.users.findAll()
+      .then(function(userinfo) {
+        console.log(userinfo);
+        Pets.findAll()
+          .then((petinfo) => {
+            res.render('profile', {
+              username: userinfo,
+              petinfos: petinfo
+            });
+          })
+          .catch(function(err) {
+            res.json(err);
+          });
+      })
+  });
 
 
 };

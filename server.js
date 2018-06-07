@@ -27,7 +27,7 @@ app.set("view engine", "handlebars");
 
 //Passport, express session and passport session
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'dog',
   resave: true,
   saveUninitialized: true
 })); // session secret
@@ -42,7 +42,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 db.sequelize.sync({
-  force: false
+  force: true
 }).then(function() {
   app.listen(PORT, function(err) {
     if (!err) {

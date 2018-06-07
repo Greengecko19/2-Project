@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "AG$my4(4477",
+    "password": null,
     "database": "petbook_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

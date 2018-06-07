@@ -9,9 +9,9 @@ module.exports = function(app) {
     res.render(path.join(__dirname, '../views'));
   });
 
-  app.get("/profile", function(req, res) {
-    res.render('profile.handlebars');
-  });
+  // app.get("/profile", function(req, res) {
+  //   res.render('profile.handlebars');
+  // });
 
   app.get("/map", function(req, res) {
     res.render('map.handlebars');
