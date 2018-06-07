@@ -24,26 +24,26 @@ $(function() {
     }).catch((err) => console.log(err));
   });
 
-  $('#submitBtn').on('click', (event) => {
-    event.preventDefault();
-    const newPet = {
-      pets_name: $('#pet-name').val().trim(),
-      pets_breed: $('#pet-breed').val().trim(),
-      pets_age: $('#pet-age').val().trim(),
-      pets_temperament: $('#pet-temperament').val().trim(),
-      UserId: $('#UserId').val().trim(),
-    };
-    if (Object.values(newPet).includes('')) return;
-    $.ajax('/api/signup-pet', {
-      type: 'POST',
-      data: newPet,
-      success: (res) => {
-        window.location.href = '/profile';
-      }
-    });
-    // .get('/profile', (req, res) => {
-    //   res.render('profile.handlebar');
-    // });
-  });
+  // $('#submitBtn').on('click', (event) => {
+  //   event.preventDefault();
+  //   const newPet = {
+  //     pets_name: $('#pet-name').val().trim(),
+  //     pets_breed: $('#pet-breed').val().trim(),
+  //     pets_age: $('#pet-age').val().trim(),
+  //     pets_temperament: $('#pet-temperament').val().trim(),
+  //     UserId: $('#UserId').val(),
+  //   };
+  //   if (Object.values(newPet).includes('')) return;
+  //   $.ajax('/api/signup-pet', {
+  //     type: 'POST',
+  //     data: newPet,
+  //     success: (res) => {
+  //       window.location.href = '/profile';
+  //     }
+  //   });
+  //   // .get('/profile', (req, res) => {
+  //   //   res.render('profile.handlebar');
+  //   // });
+  // });
 
 });

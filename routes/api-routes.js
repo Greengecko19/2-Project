@@ -1,5 +1,6 @@
 const db = require('../models');
 const Pets = db.Pets;
+const User = db.User;
 const path = require("path");
 
 module.exports = function(app) {
@@ -21,7 +22,7 @@ module.exports = function(app) {
     });
   };
 
-  app.post("/signup-pet", (req, res) => {
+  app.post("/api/signup-pet", (req, res) => {
     console.log(req.body);
     let newPets = {};
     newPets = req.body;
@@ -39,28 +40,15 @@ module.exports = function(app) {
           });
         // res.render('profile.handlebars', {
         //   data: JSON.stringify(data, null, 4);
-        // });
+        // });b
       } else {
         console.log('Pets already exist in the Database');
       };
     });
   });
 
-  // app.get("/profile", function(req, res) {
-  //   db.user.findAll()
-  //     .then(function(userinfo) {
-  //       console.log(userinfo);
-  //       Pets.findAll()
-  //         .then((petinfo) => {
-  //           res.render('profile', {
-  //             username: userinfo,
-  //             petinfos: petinfo
-  //           });
-  //         })
-  //         .catch(function(err) {
-  //           res.json(err);
-  //         });
-  //     })
+  // app.get("/signup-pet", function(req, res) {
+  //   res.render('signup-pet.handlebars', req.user)
   // });
 
 

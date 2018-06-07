@@ -29,6 +29,10 @@ exports.userloggedin = function(req, res) {
       });
     })
 };
+exports.UserId = function(req, res) {
+  const UserId = req.user.id.val();
+  return UserId
+}
 // exports.petsignup = function(req, res) {
 //   res.render('signup-pet.handlebars', req.user)
 // };
