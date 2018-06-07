@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
 
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/signup-pet',
-    failureRedirect: '/signin'
+    failureRedirect: '/'
   }), (req, res) => {
     res.render('/signup', {
       message: req.flash('signInMessage'),
@@ -22,7 +22,7 @@ module.exports = function(app, passport) {
   });
 
   app.get('/profile', isLoggedIn, authController.userloggedin);
-  app.get('/near', isLoggedIn, authController.near);
+  // app.get('/near', isLoggedIn, authController.near);
 
   // app.get('/signup-pet', isLoggedIn, authController.petsignup);
 
@@ -31,7 +31,7 @@ module.exports = function(app, passport) {
 
   app.post('/signin', passport.authenticate('local-signin', {
     successRedirect: '/profile',
-    failureRedirect: '/signin',
+    failureRedirect: '/',
     failureFlash: true
   }), (req, res) => {
     res.render('/signup', {
