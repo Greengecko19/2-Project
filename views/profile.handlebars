@@ -14,17 +14,19 @@
       </nav>
 
       <section id="bio">
+        {{#user}}
         <p>My Pet Profile:</p>
+        <p><strong>Owner Name:</strong>{{firstname}}</p>
+        {{/user}}
+        {{#pets}}
+        <p><strong>My Name:</strong>{{pets_name}}</p>
 
-        <p><strong>Owner Name:</strong> Owner name here</p>
+        <p><strong>My Breed:</strong>{{pets_breed}}</p>
 
-        <p><strong>My Name:</strong> Pet name here</p>
+        <p><strong>My Age:</strong>{{pets_age}}</p>
 
-        <p><strong>My Breed:</strong> Pet breed here</p>
-
-        <p><strong>My Age:</strong> Pet age here</p>
-
-        <p><strong>My Temperament:</strong> Pet temperament here</p>
+        <p><strong>My Temperament:</strong>{{pets_temperament}}</p>
+        {{/pets}}
       </section>
 
       <section id="activity" class="hidden">
