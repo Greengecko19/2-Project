@@ -35,21 +35,21 @@ exports.UserId = function(req, res) {
   return UserId
 }
 
-exports.near = function(req, res) {
-  Pets.findAll({
-      where: {
-        UserId: req.user.id
-      }
-    })
-    .then(arrayOfSequelizePetObjects => {
-      const petObjects = arrayOfSequelizePetObjects.map(obj => obj.dataValues);
-
-      res.render('near.handlebars', {
-        user: req.user,
-        pets: petObjects
-      });
-    })
-};
+// exports.near = function(req, res) {
+//   Pets.findAll({
+//       where: {
+//         UserId: req.user.id
+//       }
+//     })
+//     .then(arrayOfSequelizePetObjects => {
+//       const petObjects = arrayOfSequelizePetObjects.map(obj => obj.dataValues);
+//
+//       res.render('near.handlebars', {
+//         user: req.user,
+//         pets: petObjects
+//       });
+//     })
+// };
 
 exports.logout = function(req, res) {
   req.session.destroy(function(err) {

@@ -42,7 +42,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 db.sequelize.sync({
-  force: true
+  force: false
 }).then(function() {
   app.listen(PORT, function(err) {
     if (!err) {
