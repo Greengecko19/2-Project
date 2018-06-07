@@ -11,7 +11,9 @@ exports.signin = function(req, res) {
 };
 
 exports.userloggedin = function(req, res) {
-  res.render('profile.handlebars');
+  // req.user is created automatically by express-session and passport
+  // the req.user object is identified based on a browser cookie
+  res.render('profile.handlebars', req.user);
 };
 
 exports.logout = function(req, res) {
