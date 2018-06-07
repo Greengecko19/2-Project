@@ -6,8 +6,31 @@
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
         #map {
-          height: 400px;
-          width: 800px;
+          height: 500px;
+          width: 650px;
+          margin-left: 160px;
+          border-radius: 5px;
+        }
+
+        .map-header {
+          margin-bottom: 30px;
+          margin-left: 158px;
+          margin-top: 100px;
+        }
+
+        .vet-btn {
+        margin-left: 158px;
+        margin-top: 30px;
+        }
+
+        .parks-btn {
+        margin-left: 30px;
+        margin-top: 30px;
+        }
+
+        .stores-btn {
+        margin-left: 30px;
+        margin-top: 30px;
         }
         /* Optional: Makes the sample page fill the window. */
         #description {
@@ -84,8 +107,8 @@
   </head>
 <body>
 
-  <div>
-    <h2>Find Nearby Pet Services<h2>
+  <div class="map-header">
+    <h2><strong>Find Nearby Pet Services</strong><h2>
   </div>
 
 <div id="map"></div>
@@ -111,7 +134,7 @@
 
       infowindow = new google.maps.InfoWindow();
       placesService = new google.maps.places.PlacesService(map);
-      
+
       placesSearchByKeyword();
     };
 
@@ -121,7 +144,7 @@
       })
 
       markers = [];
-      
+
       placesService.nearbySearch({
         location: mapCenter,
         radius: 5000,
@@ -129,7 +152,7 @@
       }, callback);
     };
 
-     
+
     function callback(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
@@ -160,18 +183,18 @@ $(document).ready(function() {
       placesSearchByKeyword("veterinarian");
       $("#pac-input").keypress();
     });
-        
+
     $('#parks').on('click', (event) => {
       event.preventDefault();
       console.log('I have been clicked')
-      placesSearchByKeyword("parks");   
+      placesSearchByKeyword("parks");
       $("#pac-input").keypress();
     });
 
     $('#pet_stores').on('click', (event) => {
       event.preventDefault();
       console.log('I have been clicked')
-      placesSearchByKeyword("pet stores");   
+      placesSearchByKeyword("pet stores");
       $("#pac-input").keypress();
     });
 });
@@ -180,9 +203,9 @@ $(document).ready(function() {
 
  <div>
     <p></p>
-    <button id="vets" class="btn btn-primary btn-lg" type="submit">Veterinarians</button>
-    <button id="parks" class="btn btn-primary btn-lg" type="submit">Parks</button>
-    <button id="pet_stores" class="btn btn-primary btn-lg" type="submit">Pet Stores</button>
+    <button id="vets" class="btn vet-btn btn-primary" type="submit">Veterinarians</button>
+    <button id="parks" class="btn parks-btn btn-primary" type="submit">Parks</button>
+    <button id="pet_stores" class="btn stores-btn btn-primary" type="submit">Pet Stores</button>
   </div>
 
 </body>

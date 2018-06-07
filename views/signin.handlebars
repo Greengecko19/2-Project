@@ -1,11 +1,13 @@
 <div class="container">
-  <div><h2>Log in to Petbook<h2></div>
-  <div class="col-md-3 mb-3">
-    <form id="signin" name="signin" method="post" action="/signin">
+
+  <div class="login-container col-md-3 mb-3">
+    <div class="login-header"><h2><strong>Log in to Petbook</strong><h2></div>
+      <form id="signin" name="signin" method="post" action="/signin">
         <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address">
         </div>
+
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control" name="password" placeholder="Enter Password">
@@ -14,4 +16,5 @@
         <a href="/" class="btn back-home-login btn-login btn-primary" role="button">Back Home</a>
     </form>
   </div>
+
 </div>
