@@ -1,6 +1,7 @@
 var exports = module.exports = {};
 const db = require('../models');
 const Pets = db.Pets;
+const Users = db.Pets;
 
 exports.signup = function(req, res) {
   console.log(req.body);
@@ -33,9 +34,22 @@ exports.UserId = function(req, res) {
   const UserId = req.user.id.val();
   return UserId
 }
-// exports.petsignup = function(req, res) {
-//   res.render('signup-pet.handlebars', req.user)
-// };
+
+exports.near = function(req, res) {
+  Pets.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    })
+    .then(arrayOfSequelizePetObjects => {
+      const petObjects = arrayOfSequelizePetObjects.map(obj => obj.dataValues);
+
+      res.render('near.handlebars', {
+        user: req.user,
+        pets: petObjects
+      });
+    })
+};
 
 exports.logout = function(req, res) {
   req.session.destroy(function(err) {

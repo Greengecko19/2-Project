@@ -22,6 +22,7 @@ module.exports = function(app, passport) {
   });
 
   app.get('/profile', isLoggedIn, authController.userloggedin);
+  app.get('/near', isLoggedIn, authController.near);
 
   // app.get('/signup-pet', isLoggedIn, authController.petsignup);
 
