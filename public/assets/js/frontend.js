@@ -31,9 +31,10 @@ $(function() {
       pets_breed: $('#pet-breed').val().trim(),
       pets_age: $('#pet-age').val().trim(),
       pets_temperament: $('#pet-temperament').val().trim(),
+      UserId: $('#UserId').val().trim(),
     };
     if (Object.values(newPet).includes('')) return;
-    $.ajax('/signup-pet', {
+    $.ajax('/api/signup-pet', {
       type: 'POST',
       data: newPet,
       success: (res) => {

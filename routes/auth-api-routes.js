@@ -23,6 +23,9 @@ module.exports = function(app, passport) {
 
   app.get('/profile', isLoggedIn, authController.userloggedin);
 
+  // app.get('/signup-pet', isLoggedIn, authController.petsignup);
+
+
   app.get('/logout', authController.logout);
 
   app.post('/signin', passport.authenticate('local-signin', {
